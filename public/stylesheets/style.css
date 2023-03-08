@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 0.25fr auto;
+  grid-template-areas: 
+    "nav"
+    "main";
+  color: white;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  grid-area: nav;
+  height: 60px;
+  padding: 0 20px 0 10px;
+  background-color: #2C3D55;
+}
+
+#logo {
+  margin: 0;
+  width: auto;
+}
+
+span{
+  margin: 20px;
+  width: auto;
+}
+
+a {
+  color: white;
+}
+
+.nav-item > a:hover {
+  background-color: gray;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  grid-area: main;
+  height: 95vh;
+  background-color: #3E4C5E;
+}
+
+.table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: auto;
+  margin: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+thead th:nth-child(1){
+  width: 40%;
+}
+thead th:nth-child(2){
+  width: auto;
+}
+thead th:nth-child(3){
+  width: 40%;
+}
+thead th:nth-child(4){
+  width: auto;
+}
+thead th:nth-child(5){
+  width: 40%;
+}
+thead th:nth-child(6){
+  width: 200px;
+}
+
+th, td {
+  padding: 5px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+.player-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "profile"
+    "training";
+  width: auto;
+}
+
+.add-player, 
+.edit-player {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+.player-trainings {
+  margin: 20px;
+}
+
+.training-info {
+  margin: 20px;
+  width: 70%
+}
+
+h4, h5 {
+  text-align: center;
+}
+
+#training-table > thead th:nth-child(1){
+ width: auto;
+}
+#training-table > thead th:nth-child(2){
+  width: 40%;
+}
+#training-table > thead th:nth-child(3){
+  width: auto;
+}
+#training-table > thead th:nth-child(4){
+  width: auto;
+}
+#training-table > thead th:nth-child(5){
+  width: auto;
+}
