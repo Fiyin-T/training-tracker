@@ -38,10 +38,7 @@ span{
 
 a {
   color: white;
-}
-
-.nav-item > a:hover {
-  background-color: gray;
+  text-decoration: none;
 }
 
 main {
@@ -51,7 +48,24 @@ main {
   align-items: center;
   grid-area: main;
   height: 95vh;
+  background-image: url("https://i.imgur.com/y6IRC6u.jpg");
+  background-size: auto;
+}
+
+.main-content {
+  display: block;
+  margin: 0;
+  width: 85%;
   background-color: #3E4C5E;
+  height: 95vh;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .table {
@@ -59,7 +73,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 90%;
   height: auto;
   margin: 5px;
 }
@@ -69,7 +83,7 @@ table {
 }
 
 thead th:nth-child(1){
-  width: 40%;
+  width: 20%;
 }
 thead th:nth-child(2){
   width: auto;
@@ -102,6 +116,7 @@ tbody td {
     "profile"
     "training";
   width: auto;
+  margin: 50px;
 }
 
 .add-player, 
@@ -112,7 +127,7 @@ tbody td {
   align-items: center;
   width: 100%;
   height: auto;
-  margin: 5px;
+  margin-top: 50px;
 }
 
 .player-trainings {
@@ -120,11 +135,12 @@ tbody td {
 }
 
 .training-info {
+  display: contents;
   margin: 20px;
-  width: 70%
+  width: 95%
 }
 
-h4, h5 {
+h1, h3, h4, h5 {
   text-align: center;
 }
 

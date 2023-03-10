@@ -1,31 +1,35 @@
 <%- include('../partials/header') %>
     <main>
-        <h3>Team Members</h3>
-        <div class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Position</th>
-                        <th>Height(cm)</th>
-                        <th>Preferred Foot</th>
-                        <th>Profile</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% players.forEach(function(player) { %>
-                    <tr>
-                        <td><%= player.name %></td>
-                        <td><%= player.age %></td>
-                        <td><%= player.position %></td>
-                        <td><%= player.height %></td>
-                        <td><%= player.preferredFoot %></td>
-                        <td><a href="/players/<%=player._id %>">Profile</a></td>
-                    </tr>
-                    <% }) %>
-                </tbody>
-            </table>
+        <div class="main-content">
+            <h3>Team Members</h3>
+            <div class="team-members">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Position</th>
+                                <th>Height(cm)</th>
+                                <th>Preferred Foot</th>
+                                <th>Profile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% players.forEach(function(player) { %>
+                            <tr>
+                                <td><%= player.name %></td>
+                                <td><%= player.age %></td>
+                                <td><%= player.position %></td>
+                                <td><%= player.height %></td>
+                                <td><%= player.preferredFoot %></td>
+                                <td><a href="/players/<%=player._id %>">Profile</a></td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
 

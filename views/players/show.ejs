@@ -1,62 +1,64 @@
 <%- include('../partials/header') %>
     
-    <main id="">
-        <div class="player-info">
-            <div class="player-profile">
-                <h2> <%= player.name %>'s Profile </h2><br>
-                <div>Name: <%= player.name %></div><br>
-                <div>Age: <%= player.age %></div><br>
-                <div>Position: <%= player.position %></div><br>
-                <div>Height: <%= player.height %></div><br>
-                <div>Prefered Foot: <%= player.preferredFoot %></div><br>
-                <span class="edit-profile"><a href="/players/<%=player._id%>/edit">Edit Profile</a></span>
+    <main class="main-section">
+        <div class="main-content">
+            <div class="player-info">
+                <div class="player-profile">
+                    <h2> <%= player.name %>'s Profile </h2><br>
+                    <div>Name: <%= player.name %></div><br>
+                    <div>Age: <%= player.age %></div><br>
+                    <div>Position: <%= player.position %></div><br>
+                    <div>Height: <%= player.height %></div><br>
+                    <div>Prefered Foot: <%= player.preferredFoot %></div><br>
+                    <span class="edit-profile"><a href="/players/<%=player._id%>/edit">Edit Profile</a></span>
+                </div>
+                <div class="player-trainings">
+                    <form action="/players/<%=player._id%>/trainings" method="POST">
+                        <label>Attribute*: <select name="attribute">
+                            <option value="PACE">PACE</option>
+                            <option value="SHOT">SHOT</option>
+                            <option value="PASS">PASS</option>
+                            <option value="DRI">DRI</option>
+                            <option value="STA">STA</option>
+                            <option value="DEF">DEF</option>
+                        </select></label><br>
+                        <label>Activity*: </label><br>
+                        <textarea name="activity"></textarea><br>
+                        <label>Duration*(in hours): <input type="text" name="duration"></label><br>
+                        <input type="submit" value="Add Training">
+                    </form>
+                </div>
             </div>
-            <div class="player-trainings">
-                <form action="/players/<%=player._id%>/trainings" method="POST">
-                    <label>Attribute*: <select name="attribute">
-                        <option value="PACE">PACE</option>
-                        <option value="SHOT">SHOT</option>
-                        <option value="PASS">PASS</option>
-                        <option value="DRI">DRI</option>
-                        <option value="STA">STA</option>
-                        <option value="DEF">DEF</option>
-                    </select></label><br>
-                    <label>Activity*: </label><br>
-                    <textarea name="activity"></textarea><br>
-                    <label>Duration*(in hours): <input type="text" name="duration"></label><br>
-                    <input type="submit" value="Add Training">
-                </form>
-            </div>
-        </div>
-        <div class="training-info">
-            <% if (player.trainings.length) { %>
-                <h4>Training Activities</h4>
-                <table id="training-table">
-                    <thead>
-                        <tr>
-                            <th>Attribute</th>
-                            <th>Activity</th>
-                            <th>Duration</th>
-                            <th>Date</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% player.trainings.forEach(function(training) { %>
+            <div class="training-info">
+                <% if (player.trainings.length) { %>
+                    <h4>Training Activities</h4>
+                    <table id="training-table">
+                        <thead>
                             <tr>
-                                <td> <%= training.attribute %> </td>
-                                <td> <%= training.activity %> </td>
-                                <td> <%= training.duration %> </td>
-                                <td> <%= training.createdAt.toLocaleDateString() %> </td>
-                                <td> <a href="/trainings/<%=player._id%>/delete">Delete</a></td>
+                                <th>Attribute</th>
+                                <th>Activity</th>
+                                <th>Duration</th>
+                                <th>Date</th>
+                                <th>Delete</th>
                             </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <% player.trainings.forEach(function(training) { %>
+                                <tr>
+                                    <td> <%= training.attribute %> </td>
+                                    <td> <%= training.activity %> </td>
+                                    <td> <%= training.duration %> </td>
+                                    <td> <%= training.createdAt.toLocaleDateString() %> </td>
+                                    <td> <a href="/trainings/<%=player._id%>/delete">Delete</a></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
 
-            <% } else { %>
-               <h5><%= player.name %> has no trainings on record</h5>
-            <% } %>
+                <% } else { %>
+                <h5><%= player.name %> has no trainings on record</h5>
+                <% } %>
+            </div>
         </div>
     </main>
 

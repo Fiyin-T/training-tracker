@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome to Team Training Tracker' });
+  res.render('index', { title: 'Team Training' });
 });
 
 module.exports = router;
