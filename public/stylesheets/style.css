@@ -3,6 +3,11 @@
   font-family: Helvetica;
 }
 
+@media only screen and (min-height: 740px) {
+  main, .main-content {
+    height: auto;
+  }
+}
 
 body {
   margin: 0;
@@ -47,9 +52,9 @@ main {
   justify-content:flex-start;
   align-items: center;
   grid-area: main;
-  height: 95vh;
+  height: 100vh; /* 95vh */
   background-image: url("https://i.imgur.com/y6IRC6u.jpg");
-  background-size: auto;
+  background-size: cover; /* auto */
 }
 
 .main-content {
@@ -57,7 +62,7 @@ main {
   margin: 0;
   width: 85%;
   background-color: #3E4C5E;
-  height: 95vh;
+  height: 100vh; /* 95vh*/
 }
 
 .team-members {
