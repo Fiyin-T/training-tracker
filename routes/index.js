@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Team Training' });
+  res.redirect('players');
 });
 
 module.exports = router;
