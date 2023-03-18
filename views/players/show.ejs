@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
     
-    <main class="main-section">
+    <main class="main-section" id="">
         <div class="main-content">
             <div class="player-info">
                 <div class="player-profile">
@@ -54,8 +54,11 @@
                             <% }) %>
                         </tbody>
                     </table>
-
                 <% } else { %>
+                    <script>
+                        let mainEl = document.querySelector('main')
+                        mainEl.setAttribute('id', 'no-training')
+                    </script>
                 <h5><%= player.name %> has no trainings on record</h5>
                 <% } %>
             </div>
